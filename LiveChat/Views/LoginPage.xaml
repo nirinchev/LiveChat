@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveChat.LoginPage">
+    <ContentPage.Content>
+		<Grid RowSpacing = "10" Margin="20, 30, 20, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "Auto" />
+                <RowDefinition Height = "Auto" />
+                <RowDefinition Height = "Auto" />
+                <RowDefinition Height = "Auto" />
+                <RowDefinition Height = "*" />
+            </Grid.RowDefinitions>
+
+            <Entry Placeholder = "Server url" Text = "{Binding Details.ServerUrl}" Keyboard ="Url" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}" />
+            <Entry Placeholder = "Username" Text = "{Binding Details.Username}" Grid.Row = "1" Keyboard ="Email" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}" />
+            <Entry Placeholder = "Password" Text = "{Binding Password}" Grid.Row = "2" IsPassword = "true" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}" />
+            <Button Text = "Login" Command = "{Binding LoginCommand}" Grid.Row = "3" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
